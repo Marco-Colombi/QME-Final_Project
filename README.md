@@ -8,9 +8,9 @@ Keywords: *intellectual capital, knowledge management, digital age, R&D*
 
 ---
 Data Explanetion:
-- Chosen_papers: Paper related to our works 
-- Dataset: Created datasets grouped by Industry and Country
-- Datasets_world_clean: Main datasets 
+- **Chosen_papers**: Paper related to our works 
+- **Dataset**: Created datasets grouped by Industry and Country
+- **Datasets_world_clean**: Main datasets 
 ---
 *Group C* composed by: 
 - Marco Colombi 
