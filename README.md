@@ -8,7 +8,7 @@ Keywords: *intellectual capital, knowledge management, digital age, R&D*
 
 ---
 Data Explanetion:
-- **Chosen_papers**: Paper related to our works 
+- **Chosen_papers**: Paper related to our work
 - **Dataset**: Created datasets grouped by Industry and Country
 - **Datasets_world_clean**: Main datasets 
 ---
