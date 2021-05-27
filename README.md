@@ -7,7 +7,7 @@ We want to find relationships between R&D, itellectual capital and knowledge man
 Keywords: *intellectual capital, knowledge management, digital age, R&D*  
 
 ---
-Explanetion:
+Data Explanetion:
 - Chosen_papers: Paper related to our works 
 - Dataset: Created datasets grouped by Industry and Country
 - Datasets_world_clean: Main datasets 
