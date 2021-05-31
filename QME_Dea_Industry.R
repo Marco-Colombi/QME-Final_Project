@@ -35,31 +35,14 @@ test.convexity(x, y, ORIENTATION = 1, METRIC = 1, NSPLIT = 1, NREP = 1000)
 
 ## Seminal Models
 
-# Input-oriented Constant Return to Scale (CCR)
-
 detach("package:FEAR", unload = TRUE)
 
-dea(X, Y, RTS = "crs", ORIENTATION = "in")# SLACK = TRUE, DUAL = TRUE)
-e <- dea(X, Y, RTS = "crs", ORIENTATION = "in", SLACK = TRUE, DUAL = TRUE)
-eff(e)                      # Efficiency Scores
-peers(e)                    # Peers for Benchmarking of Best Practices
-dea.plot(X, Y, RTS = "crs") # Efficient Frontier Plot
-lambda(e)                   # Weights of Peers
-e$ux                        # Marginal Contribution of each input
-e$vy                        # Marginal Contribution of the output
-e$sx                        # Input Slacks (resource to be reduced)
-e$sy                        # Output Slacks (product to be expanded)
-summary(e)                  # A nice summary of results
-results <- data.frame(Institution.Name, e$eff, peers(e), e$ux, e$vy, e$sx, X1, X2, X3, Y)
-View(results)
+# FDH is our choice in this case
 
-# Input-oriented Variable Return to Scale (BCC)
-
-e2 <- dea(X, Y, RTS = "vrs", ORIENTATION = "in", SLACK = TRUE, DUAL = TRUE)
+e2 <- dea(X, Y, RTS = "fdh", ORIENTATION = "in", SLACK = TRUE, DUAL = TRUE)
 summary(e2)
-dea.plot(X, Y, RTS = "vrs") # Efficient Frontier Plot
 
-par(mfrow = c(1, 3))  # Visualization with 1 row, 3 columns
+par(mfrow = c(1, 3))  # Confronting graphically the different approaches
 dea.plot(X, Y, RTS = "crs", main = "Constant Returns to Scale", col = 'red') # Efficient Frontier Plot under CRS Technology
 dea.plot(X, Y, RTS = "vrs", main = "Variable Returns to Scale", col = 'goldenrod3') # Efficient Frontier Plot under VRS Technology
 dea.plot(X, Y, RTS = "fdh", main = "Free Disposal Hull", col = 'green') # Efficient Frontier Plot under FDH Assumption
@@ -86,7 +69,7 @@ install.packages("plotrix")
 library(plotrix)
 
 par(mfrow = c(1, 2))  # Visualization with 1 row, 2 columns
-plotCI(BootResults$dhat.bc[1:37], ui = BootResults$conf.int[1:37, 2], li = BootResults$conf.int[1:37], xlab = c("Industry"), ylab = c("Farrell Eff. Intervals"))
-plotCI(ee1[1:37], ui = CI[1:37], li = CI[1:37, -1], xlab = c("Industry"), ylab = c("Shephard Eff. Intervals"))
+plotCI(BootResults$dhat.bc[1:36], ui = BootResults$conf.int[1:36, 2], li = BootResults$conf.int[1:36], xlab = c("Industry"), ylab = c("Farrell Eff. Intervals"))
+plotCI(ee1[1:36], ui = CI[1:36], li = CI[1:36, -1], xlab = c("Industry"), ylab = c("Shephard Eff. Intervals"))
 
 
